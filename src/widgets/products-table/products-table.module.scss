@@ -1,0 +1,466 @@
+.tableCard {
+	background: var(--color-surface);
+	border-radius: var(--radius-md);
+	border: 1px solid var(--color-border);
+	overflow: hidden;
+	position: relative;
+}
+
+.tableScroll {
+	overflow-x: auto;
+}
+
+.table {
+	display: flex;
+	flex-direction: column;
+	min-width: max-content;
+}
+
+.tableRow {
+	display: flex;
+	align-items: stretch;
+	border-bottom: 1px solid var(--color-border);
+	position: relative;
+}
+
+.tableRowBody {
+	content-visibility: auto;
+	contain-intrinsic-size: 0 64px;
+}
+
+.tableRowBody:hover {
+	background: #f7f8fb;
+}
+
+.tableRowDraft {
+	background: rgba(47, 67, 215, 0.06);
+}
+
+.tableRowEditing {
+	background: var(--color-bg-muted);
+}
+
+.tableRowEditing:hover {
+	background: var(--color-bg-muted);
+}
+
+.tableHeader {
+	background: var(--color-surface);
+	position: sticky;
+	top: 0;
+	z-index: 1;
+	user-select: none;
+}
+
+.tableCell {
+	padding: 14px 16px;
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	border-right: 1px solid var(--color-border);
+	font-size: 14px;
+	flex: 0 0 auto;
+	overflow: hidden;
+	min-width: 0;
+}
+
+.tableCell:last-child {
+	border-right: none;
+}
+
+.cellCheck {
+	width: 56px;
+	justify-content: center;
+	padding: 0;
+}
+
+.cellActions {
+	width: 220px;
+	justify-content: flex-end;
+	gap: 8px;
+	position: relative;
+	overflow: visible;
+}
+
+.actionsGroup {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-left: auto;
+}
+
+.actionButton {
+	padding: 6px 12px;
+	font-size: 13px;
+	border-radius: 6px;
+	height: 32px;
+}
+
+.actionMenuButton {
+	border-radius: 12px;
+	height: 36px;
+	width: 36px;
+	padding: 0;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}
+
+.actionMenuButtonAdd {
+	border: 1px solid #242edb;
+	background: #242edb;
+	color: #ffffff;
+	width: 50px;
+	height: 25px;
+	border-radius: 25px;
+}
+
+.actionMenuButtonActions {
+	border: 2px solid #b2b3b9;
+	background: #ffffff;
+	color: #515161;
+	border-radius: 50%;
+}
+
+.actionMenuButton svg {
+	width: 18px;
+	height: 18px;
+}
+
+.actionMenu {
+	position: absolute;
+	top: calc(100% + 6px);
+	right: 8px;
+	background: var(--color-surface);
+	border: 1px solid var(--color-border);
+	border-radius: 12px;
+	padding: 6px;
+	box-shadow: 0 16px 32px rgba(9, 15, 35, 0.12);
+	min-width: 170px;
+	z-index: 5;
+}
+
+.actionMenuList {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+}
+
+.actionMenuItem {
+	width: 100%;
+	background: transparent;
+	border: none;
+	text-align: left;
+	padding: 8px 10px;
+	border-radius: 8px;
+	font-size: 13px;
+	font-weight: 600;
+	color: var(--color-text);
+	cursor: pointer;
+}
+
+.actionMenuItem:hover {
+	background: rgba(15, 23, 42, 0.06);
+}
+
+.actionMenuItemDanger {
+	color: var(--color-danger);
+}
+
+.modalActions {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	align-items: center;
+	flex-wrap: nowrap;
+}
+
+.headerCell {
+	position: relative;
+}
+
+.sortButton {
+	background: transparent;
+	border: none;
+	color: var(--color-text-muted);
+	font-weight: 700;
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	cursor: pointer;
+	width: 100%;
+	min-width: 0;
+}
+
+.sortButton span:first-child {
+	flex: 1 1 auto;
+	min-width: 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.sortButton span:last-child {
+	flex: 0 0 auto;
+}
+
+.sortIndicator {
+	font-size: 12px;
+	color: var(--color-text-muted);
+	opacity: 0.7;
+}
+
+.resizeHandle {
+	position: absolute;
+	right: -3px;
+	top: 0;
+	width: 6px;
+	height: 100%;
+	cursor: col-resize;
+}
+
+.tableInput {
+	border: 1px solid var(--color-border) !important;
+	background: var(--color-surface-alt) !important;
+	padding: 6px 10px !important;
+	border-radius: 8px;
+	height: 32px;
+	font-size: 14px;
+	color: var(--color-text);
+	box-shadow: none !important;
+	min-width: 0;
+	width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	transition:
+		border-color var(--transition-base),
+		box-shadow var(--transition-base),
+		background var(--transition-base);
+}
+
+.tableInput:focus {
+	border-color: var(--color-accent) !important;
+	box-shadow: 0 0 0 2px rgba(60, 83, 142, 0.18);
+}
+
+.tableInput[data-error='true'] {
+	border-color: var(--color-danger) !important;
+	box-shadow: 0 0 0 2px rgba(226, 59, 59, 0.18);
+}
+
+.nameCell {
+	align-items: flex-start;
+}
+
+.nameStack {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	min-width: 0;
+	flex: 1 1 auto;
+}
+
+.nameStack input {
+	font-weight: 600;
+}
+
+.nameSub {
+	font-size: 12px;
+	color: var(--color-text-muted);
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.thumb {
+	width: 44px;
+	height: 44px;
+	border-radius: 10px;
+	background: #d8d9dd;
+	flex: 0 0 auto;
+}
+
+.rating {
+	font-weight: 600;
+}
+
+.ratingLow {
+	color: var(--color-danger);
+}
+
+.cellValue {
+	min-width: 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	flex: 1 1 auto;
+}
+
+.cellContent {
+	flex: 1 1 auto;
+	min-width: 0;
+}
+
+.cellPrice .cellValue {
+	text-align: right;
+}
+
+.cellRating .cellValue {
+	text-align: center;
+}
+
+.tableRowSelected {
+	background: rgba(47, 67, 215, 0.08);
+}
+
+.tableRowEditing.tableRowSelected {
+	background: var(--color-bg-muted);
+}
+
+.tableRowSelected::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	width: 3px;
+	background: #3c538e;
+	pointer-events: none;
+}
+
+.tableEmpty {
+	padding: 24px;
+	text-align: center;
+	color: var(--color-text-muted);
+}
+
+.tableRowSkeleton {
+	pointer-events: none;
+}
+
+.skeletonBase {
+	background: linear-gradient(90deg, #e6e7ec 25%, #f3f4f7 37%, #e6e7ec 63%);
+	background-size: 240% 100%;
+	animation: skeletonShimmer 1.1s ease-in-out infinite;
+}
+
+.skeletonLine {
+	height: 12px;
+	border-radius: 6px;
+	display: inline-block;
+}
+
+.skeletonCheckbox {
+	width: 22px;
+	height: 22px;
+	border-radius: 4px;
+}
+
+.skeletonThumb {
+	width: 44px;
+	height: 44px;
+	border-radius: 10px;
+}
+
+@keyframes skeletonShimmer {
+	0% {
+		background-position: 200% 0;
+	}
+	100% {
+		background-position: -200% 0;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.skeletonBase {
+		animation: none;
+	}
+}
+
+.tableError {
+	padding: 12px 16px;
+	color: var(--color-danger);
+	border-bottom: 1px solid var(--color-border);
+	background: rgba(226, 59, 59, 0.1);
+}
+
+.cellName {
+	font-weight: 600;
+}
+
+.cellVendor {
+	font-weight: 700;
+}
+
+.cellSku {
+	color: var(--color-text);
+	font-variant-numeric: tabular-nums;
+}
+
+.cellRating {
+	justify-content: center;
+	font-variant-numeric: tabular-nums;
+}
+
+.cellPrice {
+	justify-content: flex-end;
+	font-variant-numeric: tabular-nums;
+	color: var(--color-text);
+}
+
+.cellPrice .tableInput {
+	text-align: right;
+}
+
+.tableFooter {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 14px 18px;
+	border-top: none;
+	background: var(--color-surface);
+	margin-top: 50px;
+}
+
+.tableMeta {
+	font-size: 14px;
+}
+
+.metaLabel {
+	color: var(--color-text-muted);
+}
+
+.metaValue {
+	color: var(--color-text);
+}
+
+.pagination {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.pageButton,
+.pageNav {
+	min-width: 32px;
+	height: 32px;
+	border-radius: 8px;
+	border: 1px solid #ececeb;
+	background: transparent;
+	color: var(--color-text);
+	cursor: pointer;
+	font-weight: 600;
+}
+
+.pageActive {
+	background: #797fea;
+	color: #ffffff;
+	border: none;
+}
+
+.pageNav:disabled {
+	opacity: 0.4;
+	cursor: not-allowed;
+}

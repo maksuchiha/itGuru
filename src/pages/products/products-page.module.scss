@@ -1,0 +1,124 @@
+.page {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	background: var(--color-bg);
+}
+
+.header {
+	background: #ffffff;
+	width: 100%;
+}
+
+.headerInner {
+	padding: 25px 30px;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.content {
+	background: #ffffff;
+	width: 100%;
+	margin-top: 30px;
+}
+
+.contentInner {
+	padding: 30px;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.topBar {
+	display: grid;
+	grid-template-columns: auto minmax(200px, 1fr) auto;
+	align-items: center;
+	gap: 24px;
+}
+
+.pageTitle {
+	font-size: 24px;
+	font-weight: 700;
+	margin: 0;
+	letter-spacing: -0.01em;
+}
+
+.searchShell {
+	position: relative;
+	max-width: 1020px;
+	width: 100%;
+	margin: 0 auto;
+	justify-self: center;
+	border-radius: 12px;
+	padding: 4px;
+}
+
+.searchIcon {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	left: 12px;
+	width: 18px;
+	height: 18px;
+	color: var(--color-text-muted);
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.searchIcon svg {
+	width: 18px;
+	height: 18px;
+}
+
+.searchInput {
+	background: #f3f3f3;
+	border: 1px solid transparent;
+	padding-left: 38px;
+}
+
+.logoutButton {
+	border: 1px solid var(--color-text-muted);
+	justify-self: end;
+	padding: 10px 16px;
+	color: var(--color-text);
+}
+
+@media (max-width: 768px) {
+	.page {
+		padding: 0;
+	}
+
+	.headerInner {
+		padding: 15px;
+	}
+
+	.content {
+		margin-top: 30px;
+	}
+
+	.contentInner {
+		padding: 15px;
+	}
+
+	.topBar {
+		gap: 15px;
+		grid-template-columns: 1fr;
+		justify-items: start;
+	}
+
+	.logoutButton {
+		justify-self: start;
+	}
+}
+
+@media (max-width: 992px) {
+	.headerInner {
+		padding: 15px;
+	}
+
+	.contentInner {
+		padding: 15px;
+	}
+}

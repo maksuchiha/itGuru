@@ -1,0 +1,15 @@
+.editableCell {
+	width: 100%;
+	position: relative;
+	padding-bottom: 18px;
+}
+
+.errorText {
+	color: var(--color-danger);
+	font-size: 12px;
+	line-height: 1.2;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	font-weight: 400;
+}

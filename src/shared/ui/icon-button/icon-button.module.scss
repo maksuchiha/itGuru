@@ -1,0 +1,29 @@
+.iconButton {
+	border: 1px solid var(--color-border);
+	background: var(--color-surface);
+	border-radius: 12px;
+	width: var(--icon-button-size, 36px);
+	height: var(--icon-button-size, 36px);
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--color-text-muted);
+	cursor: pointer;
+	padding: 0;
+}
+
+.iconButton svg {
+	width: 18px;
+	height: 18px;
+}
+
+.primary {
+	background: var(--color-accent);
+	border-color: transparent;
+	color: #ffffff;
+}
+
+.iconButton:disabled {
+	opacity: 0.6;
+	cursor: not-allowed;
+}

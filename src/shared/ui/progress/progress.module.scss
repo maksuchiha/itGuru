@@ -1,0 +1,29 @@
+.progressBar {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 2px;
+	overflow: hidden;
+	background: rgba(47, 67, 215, 0.1);
+}
+
+.progressLine {
+	display: block;
+	height: 100%;
+	width: 40%;
+	background: var(--color-accent);
+	animation: progress-slide 1.2s ease-in-out infinite;
+}
+
+@keyframes progress-slide {
+	0% {
+		transform: translateX(-100%);
+	}
+	50% {
+		transform: translateX(40%);
+	}
+	100% {
+		transform: translateX(180%);
+	}
+}
